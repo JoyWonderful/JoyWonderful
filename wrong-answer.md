@@ -80,13 +80,15 @@ $\mathbf{n - 1}$
 就像冒泡排序的**第一次比较**：
 
 $$
-\mathtt{8 \ 5 \ 7 \ 9 \ 2 \ 6} \ \\ \\
-\mathtt{{\color{red}5} \ {\color{red}8} \ 7 \ 9 \ 2 \ 6} \ \\
-\mathtt{5 \ {\color{red}7} \ {\color{red}8} \ 9 \ 2 \ 6} \ \\
-\mathtt{5 \ 7 \ {\color{red}8} \ {\color{red}9} \ 2 \ 6} \ \\
-\mathtt{5 \ 7 \ 8 \ {\color{red}2} \ {\color{red}9} \ 6} \ \\
-\mathtt{5 \ 7 \ 8 \ 2 \ {\color{red}6} \ {\color{red}9}} \ \\
-\mathtt{5 \ 7 \ 8 \ 2 \ 6 \ {\color{green}9}} \ \\
+\begin{aligned}
+&\mathtt{8 \ 5 \ 7 \ 9 \ 2 \ 6} \ \\ \\
+&\mathtt{{\color{red}5} \ {\color{red}8} \ 7 \ 9 \ 2 \ 6} \ \\
+&\mathtt{5 \ {\color{red}7} \ {\color{red}8} \ 9 \ 2 \ 6} \ \\
+&\mathtt{5 \ 7 \ {\color{red}8} \ {\color{red}9} \ 2 \ 6} \ \\
+&\mathtt{5 \ 7 \ 8 \ {\color{red}2} \ {\color{red}9} \ 6} \ \\
+&\mathtt{5 \ 7 \ 8 \ 2 \ {\color{red}6} \ {\color{red}9}} \ \\
+&\mathtt{5 \ 7 \ 8 \ 2 \ 6 \ {\color{green}9}} \ \\
+\end{aligned}
 $$
 
 [click here if math doesn't render](https://joywonderful.github.io/posts/sort/#%E4%BE%8B%E5%AD%90-1)
