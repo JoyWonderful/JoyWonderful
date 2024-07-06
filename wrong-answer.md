@@ -19,6 +19,22 @@ flowchart TD
 
 ------
 
+```mermaid
+flowchart TD
+    1((1.00)) ---|0| A[<strong style="color:#ffcb00">A</strong> 0.40<br>0]
+    1 ---|1| 0_6((0.60<br>1))
+    0_6 ---|0| 0_3((0.30<br>10))
+    0_6 ---|1| B[<strong style="color:#ffcb00">B</strong> 0.30<br>11]
+    0_3 ---|0| 0_15((0.15<br>100))
+    0_3 ---|1| C[<strong style="color:#ffcb00">C</strong> 0.15<br>101]
+    0_15 ---|0| 0_06((0.06<br>1000))
+    0_15 ---|1| 0_09((0.09<br>1001))
+    0_06 ---|0| G[<strong style="color:#ffcb00">G</strong> 0.03<br>10000]
+    0_06 ---|1| F[<strong style="color:#ffcb00">F</strong> 0.03<br>10001]
+    0_09 ---|0| E[<strong style="color:#ffcb00">E</strong> 0.04<br>10010]
+    0_09 ---|1| D[<strong style="color:#ffcb00">D</strong> 0.05<br>10011]
+```
+
 哈夫曼树的左子树为 0，右子树为 1。将它们连起来即可得到 **`10011`**。
 
 
