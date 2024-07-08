@@ -1,3 +1,14 @@
+# Categories
+- <span id="huffman">哈夫曼编码</span>
+    - [2024-07-04 \[10\]](#10)
+- <span id="gaojing">高精度</span>
+    - [2024-07-04 \[12\]](#12)
+- <span id="pailie">排列组合</span>
+    - [2024-07-04 \[15\]](#15)
+- <span id="sort">排序</span>
+    - [2024-07-04 \[16\]](#16)
+
+
 # 2024-07-04
 
 
@@ -37,12 +48,14 @@ flowchart TD
 
 哈夫曼树的左子树为 0，右子树为 1。将它们连起来即可得到 **`10011`**。
 
+*Category:* *[哈夫曼编码](#huffman)*
+
 
 ## \[12\]
 
 关于高精度运算说法错误的是？
 
-<ol style="list-style-type:upper-alpha;">
+<ol type="A" style="list-style-type:upper-alpha;">
     <li>高精度计算主要是用来处理大整数或需要保留多位小数的运算</li>
     <li>大整数除以小整数的步骤：将被除数和除数对齐，从左到右逐位尝试将除数乘以某个数，通过减法得到被除数，并累加商</li>
     <li>高精度乘法的运算时间只与两个运算数中长度较长者有关</li>
@@ -71,6 +84,8 @@ flowchart TD
 > ```
 > [oi-wiki](https://oi-wiki.org/math/bignum/#%E4%B9%98%E6%B3%95)
 
+*Category:* *[高精度](#gaojing)*
+
 
 ## \[15\]
 
@@ -84,6 +99,8 @@ flowchart TD
 1, 7;  
 2, 10;  
 3, 1.
+
+*Category:* *[排列组合](#pailie)*
 
 
 ## \[16\]
@@ -110,3 +127,5 @@ $$
 [click here if math doesn't render](https://joywonderful.github.io/posts/sort/#%E4%BE%8B%E5%AD%90-1)
 
 五行有红色的数字就是在进行比较。可见经过 $\mathbf{5}$ 次比较后就确定了 $\mathtt{9}$ 是这 $6$ 个数字中的最大数。可见找出最大数只需要 $n - 1$ 次。
+
+*Category:* *[排序](#sort)*
