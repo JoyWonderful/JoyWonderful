@@ -1,0 +1,14 @@
+cn.bing.com###id_h
+! 搜索建议屏蔽
+cn.bing.com##.pageRecoContainer,#inline_rs,.b_ans
+! 搜索跟踪链接替换 js; 从 change-bing-url.js 缩小
+cn.bing.com#%#window.addEventListener("DOMContentLoaded",(function(){var e=document.querySelectorAll("a"),r=/^http(s?):\/\/(.*\.)?bing.com\/ck/;e.forEach((e=>{if(r.test(e.href))try{var a=atob(new URL(e.href).searchParams.get("u").replace(/^a1/,"").replace(/_/g,"/").replace(/-/g,"+"));e.href=a}catch(r){console.error("Error change link on"+e)}}))}));
+cn.bing.com#%#console.log("test from adguard!");
+
+! 去掉 CSDN
+cn.bing.com##.b_algo:has(a.tilk[href*="csdn"])
+cn.bing.com##.b_algo:has(a.tilk[aria-label*="CSDN"]),.b_algo:has(a.tilk[aria-label*="csdn"])
+||cn.bing.com/AS/Suggestions
+
+
+||www.luogu.com.cn/api/qiaFan/
