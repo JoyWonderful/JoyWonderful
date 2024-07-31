@@ -6,15 +6,19 @@
 - <span id="pailie">排列组合</span>
     - [2024-07-04 \[15\]](#15)
     - [2024-07-16 选择-\[8\]](#选择-8)
+    - [2024-07-31 选择-\[12\]](#选择-12-1)
 - <span id="sort">排序</span>
     - [2024-07-04 \[16\]](#16)
     - [2024-07-16 选择-\[12\]](#选择-12)
+    - [2024-07-30 选择-\[7\]](#选择-7)
 - <span id="calc">计算</span>
     - [2024-07-16 选择-\[2\]](#选择-2)
 - <span id="firstinf">基础知识</span>
     - [2024-07-16 选择-\[3\]](#选择-3)
 - <span id="bintree">二叉树</span>
     - [2024-07-16 选择-\[5\]](#选择-5)
+- <span id="graph">图</span>
+    - [2024-07-30 选择-\[8\]](#选择-8-1)
 
 
 
@@ -35,7 +39,6 @@ flowchart TD
     0_09 --- E[<strong style="color:#ffcb00">E</strong> 0.04] & D[<strong style="color:#ffcb00">D</strong> 0.05]
 ```
 
-[click here if mermaid doesn't show](https://mermaid.ink/svg/pako:eNqFkt9rgzAQx_-VkEGxUN2JVVC6QlvbPu1pe1tKyTT-ADUjRkYp_d-XxM7ZvZin3OW-n-9duCtOeMpwhLOKfycFFRK9x6RB6riW5ToA8zmybRttPlatFLzJUSsvFXshSlhxET1lWfIJQPB6s3ruK9YInCWc0AzBObAscAIF6ZkqYWhw9vSDp-kztJ1kb8dsD06_NO9Oc32Nc32D203idmOc6w8417_zwPQNgeGpMDRh-DcG9HMcJ62OYyvw9K8cJkWHf6LBNTSu-0nA_gGw1K7xpCh-EPknvMA1EzUtU7UfV90DwbJgNSM4UteUZbSrJMGkualS2kn-dmkSHEnRsQUWvMsLHGW0alXUfaVUsrikuaD1kGVpKbl47TfQLOLtBxmRwj0)
 
 ------
 
@@ -54,7 +57,6 @@ flowchart TD
     0_09 ---|0| E[<strong style="color:#ffcb00">E</strong> 0.04<br>10010]
     0_09 ---|1| D[<strong style="color:#ffcb00">D</strong> 0.05<br>10011]
 ```
-[click here if mermaid doesn't show](https://mermaid.ink/svg/pako:eNqFkt1ugjAYhm-l6U4gUfY1qAmEmaioF7CdrcRUKGjCz1JKFqPe-ypQQbIEjoC-PM_7tVxxWEQcuzhOi9_wxIREXz7NkbqIYRALwDTRdDq9wQ2tvr1SiiJPUCkvKf-g6tu0EO5bHIdHAIqXK--9SSwRWDPwjmIJQUurKeSG4LAwDLAW9SoxzWZZvdUaONiPgN0EYJhQiPVokXW_SEsigQbZnYrMHy4yb1w9ma1lm1HZpi_TqM5G5p0O6tlh0ep6vjZVbxA4dcppU71Ngucu7Udr7fu1wNZKCAYwpdyNwnb_w7opwdHNtqOw7QtspseEIUw180dh_gtMH6Q6bTzBGRcZO0fq974-0BTLE884xa66jXjMqlRSTPO7irJKFp-XPMSuFBWfYFFUyQm7MUtL9VT9RExy_8wSwbImcv8DjKnvGQ)
 
 哈夫曼树的左子树为 0，右子树为 1。将它们连起来即可得到 **`10011`**。
 
@@ -348,3 +350,143 @@ int main() {
 
 当输入 `6`，输出 `6 6`；输入 `10`，输出 `24 28`；输入 `24` 输出 `120 28`。  
 因此都有可能。
+
+
+
+# 2024-07-30
+
+
+## 选择-\[7\]
+
+下列排序算法的常见实现中，最快时间复杂度与最差时间复杂度相同的是？
+
+<ol type="A" style="list-style-type:upper-alpha;">
+    <li>快速排序</li>
+    <li>归并排序</li>
+    <li>插入排序</li>
+    <li>冒泡排序</li>
+</ol>
+
+------
+
+**B**
+
+快速排序、插入排序 的时间复杂度在不同条件下是不同的。
+
+冒泡排序，缺少**简单**二字，意味着它是有优化的：  
+即加上一个判断变量判断此次是否交换过，如果没有交换过就说明已经排好了，可以退出了。它的最优时间复杂度为 $O(\text{数组长度})$。  
+代码如下：
+
+```cpp
+// n 为数组长度
+for(int i = 1; i <= n; i++)
+{
+    bool flag = 1; // 1 未交换;  0 已交换
+    for(int j = 1; j <= n - i; j++)
+    {
+        if(a[j] > a[j + 1])
+        {
+            flag = 0;
+            swap(a[j], a[j + 1]); // 省略具体交换步骤
+        }
+    }
+    if(flag) break; // 没有交换，已经有序，可以停止
+}
+```
+
+*Category:* *[排序](#sort)*
+
+
+## 选择-\[8\]
+
+考虑一个有向图，该图包含 $5$ 个点， $4$ 条有向边：$\mathtt{1 \to 2 ,\ 1 \to 3 ,\ 1 \to 5 ,\ 2 \to 4}$。请问若要使得该图变为一个连通图，最少需要添加的边数是？
+
+------
+
+**3**
+
+连通图，就是从一个点出发可以到达图上所有任意一个点。  
+所以所有的点都至少**入度和出度都为** $\mathbf{1}$。
+
+```mermaid
+flowchart LR
+    1((1)) --> 2((2))
+    1 --> 3((3))
+    1 --> 5((5))
+    2 --> 4((4))
+
+    4 -.-> 1
+    3 -.-> 1
+    5 -.-> 1
+```
+
+可见 $\mathtt{3,\ 4,\ 5}$ 出度为 $0$，$\mathtt{1}$ 入度为 $0$，只有 $\mathtt{2}$ 符合条件。所以考虑 $\mathtt{\{3,\ 4,\ 5\} \to 1}$，使 $\mathtt{3,\ 4,\ 5}$ 出度为 $1$，$\mathtt{1}$ 入度为 $3$。便成为连通图，添加了 $3$ 条边。  
+（实线边为原有边，虚线边为添加的边。）
+
+*Category:* *[图](#graph)*
+
+
+## 选择-\[12\]
+
+有 $3$ 个班级，每个班级选 $3$ 名学生上台领奖，要求按班级为单位上台，不同班级之间以及不同学生之间可以调整先后顺序，有多少种合法的排列方法？
+
+------
+
+$\mathbf{1296}$
+
+整体班级的排列为 $A^3_3$，班级里每个学生的排列为 $A^3_3$，$3$ 个班级，即 ${(A^3_3)}^3$。  
+
+${(A^3_3)}^3 \times A^3_3 = {(1 \times 2 \times 3)}^4 = 1296$ .
+
+*Category:* *[排列组合](#pailie)*
+
+
+## 选择-\[15\]
+
+有一个天平和二十五个砝码，其中一个砝码比其他的要轻一些。若要确保将轻的那个找出来最少的称重次数是？
+
+------
+
+**3**
+
+3 个 砝码，称一次；9 个 砝码，称两次；27 个砝码，称三次。因此 25 个应该称三次。
+
+*Category:* *Unknow*
+
+
+## 阅读-\[1\]-判-\(1\)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+bool f(int a,int b) {
+	if(a==1 || b==1) return false;
+	int c;
+	for(int i=min(a,b); i>=1; i--)
+		if(a % i == 0 && b % i == 0) {
+			c = i;
+			break;
+		}
+		
+	for(int i=2; i * i <= c; i++)
+		if(a % i == 0) return false;
+	return true;
+}
+
+int main() {
+	int a,b;
+	cin >> a >> b;
+	cout << f(a,b) << endl;
+	return 0;
+}
+```
+
+当输入为 `2 4` 时，输出为 `true`
+
+------
+
+✘
+
+输出 `bool` 类型只会**输出** `0` or `1`。哪怕在代码中写 `true` or `false`。  
+因此应输出 `1`。
