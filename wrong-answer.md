@@ -166,8 +166,8 @@ $$
 = \ &1920\text{Byte} \times 1080\text{Byte} \times 8\text{bit} \\
 = \ &1920\text{Byte} \times 1080\text{Byte} \times 1\text{Byte} \\
 = \ &2025\text{KiB} \\
-\approx &1.97\text{MiB} \\
-\approx &2\text{MiB}
+\approx \ &1.97\text{MiB} \\
+\approx \ &2\text{MiB}
 \end{aligned}
 $$
 
