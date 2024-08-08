@@ -12,3 +12,5 @@ cn.bing.com##.b_algo:has(a.tilk[aria-label*="CSDN"]),.b_algo:has(a.tilk[aria-lab
 
 
 ||www.luogu.com.cn/api/qiaFan/
+www.luogu.com.cn##.card.padding-default h3.lfe-h3 + div
+www.luogu.com.cn#%#window.addEventListener("load",(function(){var a=document.querySelector(".introduction.marked");if(a)a.style.display="block";}))
