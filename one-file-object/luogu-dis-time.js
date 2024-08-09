@@ -1,7 +1,7 @@
 (function() {
     var b = new URL(window.location);
     if(b.pathname.slice(0, 8) == "/discuss") {
-        window.addEventListener("load", (function() {
+        setInterval((function() {
             var a = document.querySelectorAll(".time");
             a.forEach((e) => {
                 var c = e.querySelector("time[datetime]")
@@ -13,6 +13,6 @@
                     e.innerHTML = e.getAttribute("title");
                 }
             });
-        }));
+        }), 1000);
     }
 })();
