@@ -1,7 +1,7 @@
 (function() {
-    var b = new URL(window.location);
-    if(b.pathname.slice(0, 8) == "/discuss") {
-        setInterval((function() {
+    setInterval((function() {
+        var b = new URL(window.location);
+        if(b.pathname.slice(0, 8) == "/discuss") {
             var a = document.querySelectorAll(".time");
             a.forEach((e) => {
                 var c = e.querySelector("time[datetime]")
@@ -13,6 +13,6 @@
                     e.innerHTML = e.getAttribute("title");
                 }
             });
-        }), 1000);
-    }
+        }
+    }), 1000);
 })();
