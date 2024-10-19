@@ -1,5 +1,6 @@
 !! cn.bing.com###id_h
 cn.bing.com###id_mobile
+cn.bing.com###id_qrcode
 ! 搜索建议屏蔽
 cn.bing.com##.pageRecoContainer,#inline_rs,.b_ans
 ! 搜索跟踪链接替换 js; 从 change-bing-url.js 缩小
