@@ -1,6 +1,6 @@
 {
     "name": "Change Newtab",
-    "description": "自己（JoyWonderful）弄的一个重定向新标签页的东西啦。",
+    "description": "重定向新标签页。",
     "version": "0.1",
     "manifest_version": 3,
     "chrome_url_overrides": {
