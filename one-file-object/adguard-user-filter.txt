@@ -1,0 +1,20 @@
+cn.bing.com###id_mobile
+cn.bing.com###id_qrcode
+! 搜索建议屏蔽
+cn.bing.com##.pageRecoContainer,#inline_rs,.b_ans
+! 搜索跟踪链接替换 js; 从 change-bing-url.js 缩小
+cn.bing.com#%#window.addEventListener("DOMContentLoaded",(function(){var e=document.querySelectorAll("a"),r=/^http(s?):\/\/(.*\.)?bing.com\/ck/;e.forEach((e=>{if(r.test(e.href))try{var a=atob(new URL(e.href).searchParams.get("u").replace(/^a1/,"").replace(/_/g,"/").replace(/-/g,"+"));e.href=a}catch(r){console.error("Error change link on"+e)}}))}));
+cn.bing.com#%#console.log("test from adguard!");
+
+! 去掉 CSDN, baidu
+cn.bing.com##.b_algo:has(a.tilk[href*="csdn"])
+cn.bing.com##.b_algo:has(a.tilk[aria-label*="CSDN"]),.b_algo:has(a.tilk[aria-label*="csdn"])
+cn.bing.com##.b_algo:has(a.tilk[href*="baidu.com"])
+cn.bing.com##.b_algo:has(a.tilk[aria-label*="baidu"]),.b_algo:has(a.tilk[aria-label*="baidu"])
+||cn.bing.com/AS/Suggestions
+
+
+||www.luogu.com.cn/api/qiaFan/
+www.luogu.com.cn#%#var b=new URL(window.location);if(b.pathname.slice(0,5)=="/user"&&(b.hash=="#main"||b.hash=="")){window.addEventListener("load",(function(){document.querySelector(".introduction.marked").style.display="block"}))}
+! luogu-dis-time.js
+www.luogu.com.cn,www.luogu.com#%#setInterval((function(){"/discuss"==new URL(window.location).pathname.slice(0,8)&&document.querySelectorAll(".time").forEach((t=>{var e=t.querySelector("time[datetime]");if(e){const t=new Date(e.getAttribute("datetime"));e.innerHTML=new Intl.DateTimeFormat("zh-CN",{year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"}).format(t)}else t.hasAttribute("title")&&(t.innerHTML=t.getAttribute("title"))}))}),1e3)
