@@ -4,6 +4,8 @@
 // @version      0.0.1
 // @description  通过 `HTMLCanvasElement.prototype.toBlob()` 和自动翻页下载 `canvas` 内漫画图片
 // @author       JoyWonderful
+// @license      GPL-3.0-or-later
+// @supportURL   https://github.com/JoyWonderful/JoyWonderful/issues
 // @match        https://manga.bilibili.com/mc*
 // @icon         https://www.bilibili.com/favicon.ico
 // @grant        GM_registerMenuCommand
@@ -156,6 +158,6 @@ console.log("end anti copy", Date());
         if(is_auto) auto_down();
     });
 
-    var menuid1 = GM_registerMenuCommand("下载这一章", download_manga, "d");
+    var menuid1 = GM_registerMenuCommand("下载这一话", download_manga, "d");
     var menuid2 = GM_registerMenuCommand("自动下载整本", auto_down, "a");
 })();
