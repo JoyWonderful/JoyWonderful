@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         哔哩哔哩漫画下载
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.0.2
 // @description  通过 `HTMLCanvasElement.prototype.toBlob()` 和自动翻页下载 `canvas` 内漫画图片
 // @author       JoyWonderful
 // @license      GPL-3.0-or-later
@@ -67,14 +67,6 @@ console.log("end anti copy", Date());
     unsafeWindow.addEventListener("DOMContentLoaded", function() {
         document.body.append(s);
         manga_load_event();
-        // 配合 anti anti-download
-        // 傻逼 bilibili
-        const anti = unsafeWindow.antid;
-        unsafeWindow.console.log = anti.consoleLog;
-        unsafeWindow.HTMLCanvasElement.prototype.toDataURL = anti.canvasProtoToDataURL;
-        unsafeWindow.HTMLCanvasElement.prototype.toBlob = anti.canvasProtoToBlob;
-        unsafeWindow.URL.createObjectURL = anti.URLCreateObjectURL;
-        unsafeWindow.URL.revokeObjectURL = anti.URLRevokeObjectURL;
     });
 
     async function download_manga() {
@@ -155,6 +147,15 @@ console.log("end anti copy", Date());
         return true;
     }
     unsafeWindow.addEventListener("manga:loaded", ()=>{
+        // 配合 anti anti-download
+        // 傻逼 bilibili
+        const anti = unsafeWindow.antid;
+        unsafeWindow.console.log = anti.consoleLog;
+        unsafeWindow.HTMLCanvasElement.prototype.toDataURL = anti.canvasProtoToDataURL;
+        unsafeWindow.HTMLCanvasElement.prototype.toBlob = anti.canvasProtoToBlob;
+        unsafeWindow.URL.createObjectURL = anti.URLCreateObjectURL;
+        unsafeWindow.URL.revokeObjectURL = anti.URLRevokeObjectURL;
+        // 继续自动下载
         if(is_auto) auto_down();
     });
 
