@@ -1,7 +1,7 @@
 ## Introduction
 
-通过 GitHub 下载此脚本，点击"Raw" | [GreasyFork](https://greasyfork.org/zh-CN/scripts/565723-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%BC%AB%E7%94%BB%E4%B8%8B%E8%BD%BD)  
-若有问题/失效了，还请提 issue ~~，随缘更新~~。
+通过 GitHub 下载此脚本，点击"Raw" | [GreasyFork](https://greasyfork.org/zh-CN/scripts/565723)  
+若有问题/失效了，还请提 issue 或在 Greasyfork 里评论~~，随缘更新~~。
 
 这个用户脚本主要是用于（在前端）慢慢缓存 B站 漫画用的，适合**不着急下载漫画**，**不要求高画质**，但想*（边看边）缓存漫画*/*受不了网页菜单乱跳且有广告*的人。  
 如果您只是想直接通过服务器下载高清图片，这个脚本做不到。我目前也找不到可以达到此要求并且可以使用的项目（有一个[项目](https://github.com/Zeal-L/BiliBili-Manga-Downloader)已经失效了）。
