@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         哔哩哔哩漫画下载
 // @namespace    http://tampermonkey.net/
-// @version      0.0.2
+// @version      0.0.3
 // @description  通过 `HTMLCanvasElement.prototype.toBlob()` 和自动翻页下载 `canvas` 内漫画图片
 // @author       JoyWonderful
 // @license      GPL-3.0-or-later
@@ -71,7 +71,7 @@ console.log("end anti copy", Date());
 
     async function download_manga() {
         try {
-            var chapter_str = document.querySelector(".info-text :last-child").innerText.substr(2,3); // `第 xxx 话` 的截取
+            var chapter_str = document.querySelector(".info-text :last-child").innerText.replace("第","").replace("话","").trim(); // `第 xxx 话` 的截取
             var pg_cnt = Number(document.querySelector(".info-text :first-child").innerText.replace("P","")); // `xxP` 的数字
             var pages = document.querySelectorAll(".image-item.image-loaded > .image-container > canvas"); // 已加载好图片的 canvas
             console.log(`chapter:${chapter_str}\npage count:${pg_cnt}`);
