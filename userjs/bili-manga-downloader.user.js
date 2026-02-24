@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         哔哩哔哩漫画下载
 // @namespace    http://tampermonkey.net/
-// @version      0.0.3
+// @version      0.0.4
 // @description  通过 `HTMLCanvasElement.prototype.toBlob()` 和自动翻页下载 `canvas` 内漫画图片
 // @author       JoyWonderful
 // @license      GPL-3.0-or-later
@@ -71,7 +71,7 @@ console.log("end anti copy", Date());
 
     async function download_manga() {
         try {
-            var chapter_str = document.querySelector(".info-text :last-child").innerText.replace("第","").replace("话","").trim(); // `第 xxx 话` 的截取
+            var chapter_str = document.querySelector(".info-text :last-child").innerText.replace(/[^\d]/g,""); // `第 xxx 话` 的截取
             var pg_cnt = Number(document.querySelector(".info-text :first-child").innerText.replace("P","")); // `xxP` 的数字
             var pages = document.querySelectorAll(".image-item.image-loaded > .image-container > canvas"); // 已加载好图片的 canvas
             console.log(`chapter:${chapter_str}\npage count:${pg_cnt}`);
@@ -118,6 +118,7 @@ console.log("end anti copy", Date());
             return false;
         }
         is_auto = false; // 阻塞用
+        document.querySelector("button.load-next-btn").disabled = false;
         // 尝试自动翻页
         var i = 0, tryout = 0;
         while(pages.length < pg_cnt) {
@@ -141,6 +142,7 @@ console.log("end anti copy", Date());
         await sleep(100);
 
         document.querySelector("button.load-next-btn").click(); // 下一页
+        document.querySelector("button.load-next-btn").disabled = true; // 防止重复点击下一页 恢复见上
         // await sleep(5000);
         manga_load_event();
         is_auto = true;
