@@ -1,4 +1,4 @@
 $$
-\textbf{\Large{Busy preparing for an exam.}} \\
+\textbf{\Large{Busy preparing for an exam.}} \newline
 \texttt{\Large{Truly **BUSY**.}}
 $$
